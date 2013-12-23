@@ -20,6 +20,7 @@ public class SurnameNotNameValidator implements ConstraintValidator<SurnameNotNa
 
     @Override
     public boolean isValid(Customer value, ConstraintValidatorContext context) {
-        return value.getName().equalsIgnoreCase(value.getSurname()) ? false : true;
+        // Null check is done by @NotNullOrEmpty
+        return !value.getName().equalsIgnoreCase(value.getSurname());
     }
 }

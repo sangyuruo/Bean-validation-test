@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
  * Date: 11.10.13
  * Time: 17:14
  */
-@SurnameNotName()
+@SurnameNotName
 public class Customer {
 
     @NotNullOrEmpty

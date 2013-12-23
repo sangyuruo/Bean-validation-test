@@ -7,7 +7,7 @@ import javax.validation.Payload;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
@@ -17,7 +17,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * Time: 17:38
  */
 @Constraint(validatedBy = SurnameNotNameValidator.class)
-@Target({FIELD, METHOD, TYPE})
+@Target({TYPE})
 @Retention(RUNTIME)
 public @interface SurnameNotName {
     String message() default "{de.bartkowiak.SurnameNotName.message}";
