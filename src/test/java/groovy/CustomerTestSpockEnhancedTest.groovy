@@ -1,6 +1,5 @@
 package groovy
 
-import domain.Address
 import domain.Customer
 import spock.lang.Specification
 
@@ -8,7 +7,6 @@ import javax.validation.ConstraintViolation
 import javax.validation.Validation
 import javax.validation.Validator
 import javax.validation.ValidatorFactory
-
 /**
  * Created with IntelliJ IDEA.
  * User: janbartkowiak
@@ -54,16 +52,5 @@ class CustomerTestSpockEnhancedTest extends Specification {
         validatioResults                                          | validation
         new Customer(name: 'Jan', surname: 'Bartkowiak', age: 33) | 0
         new Customer(name: 'Jan', surname: 'Jan', age: 33)        | 1
-    }
-
-    def "Test access for private methods granted by google guava"() {
-        setup:
-        def address = new Address();
-
-        when:
-        address.checkAddress();
-
-        then:
-        true;
     }
 }
